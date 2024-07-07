@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="ico.ico" type="image/x-icon">
+    <title></title>
+</head>
+<body>
+    <h1>Calculadora de Média</h1>
+    <label for="valor1">Valor 1:</label>
+    <input type="number" id="valor1">
+    <br>
+    <label for="valor2">Valor 2:</label>
+    <input type="number" id="valor2">
+    <br>
+    <label for="valor3">Valor 3:</label>
+    <input type="number" id="valor3">
+    <br>
+    <button onclick="calcularMedia()">Calcular Média</button>
+    <p id="resultadoMedia"></p>
+    <h1>Verificador de Idade</h1>
+    <label for="idade">Digite sua idade:</label>
+    <input type="number" id="idade">
+    <br>
+    <button onclick="verificarIdade()">Verificar</button>
+    <p id="resultadoIdade"></p>
+    <h1>Replicar uma Frase</h1>
+    <label for="frase">Digite Uma Frase</label>
+    <input type="text" id="frase">
+    <br>
+    <button onclick="verificafrase()">Replicar</button>
+    <p id="resultadofrase"></p>
+    <script>
+        function calcularMedia() {
+            const valor1 = parseFloat(document.getElementById('valor1').value);
+            const valor2 = parseFloat(document.getElementById('valor2').value);
+            const valor3 = parseFloat(document.getElementById('valor3').value);
+            const media = (valor1 + valor2 + valor3) / 3;
+            document.getElementById('resultadoMedia').textContent = `Média: ${media.toFixed(2)}`;}
+        function verificarIdade() {
+            const idade = parseInt(document.getElementById('idade').value);
+            const resultado = idade >= 18 ? 'maior de 18 anos' : 'menor de 18 anos';
+            document.getElementById('resultadoIdade').textContent = `Você é ${resultado}.`;}
+        function verificafrase(){
+            const fraseRepetida = Array(10).fill('Não importa o que tu escreveu, o importante é que a grama é verde!').join(', ');
+            document.getElementById('resultadofrase').textContent = fraseRepetida;}
+    </script>
+</body>
+</html>
